@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/main.css">
+    <title>Let's Chat</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+                <h2><a href="">Let's Chat</a></h2>
+                <ul class="main-nav-items">
+                    <li><a href="/html/auth/login.html">Login</a></li>
+                    <li><a href="/html/auth/signup.html">Signup</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="form-section">
+                <form id="login-form">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="login-email">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="login-password">
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+                <div>
+                    <p>New User <a href="./signup.html" class="click-here">Click Here to Signup</a></p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="../../js/auth.js"></script>
+</body>
+
+</html>

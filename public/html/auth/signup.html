@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/main.css">
+    <title>Let's Chat</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="main-nav">
+                <h2><a href="">Let's Chat</a></h2>
+                <ul class="main-nav-items">
+                    <li><a href="/html/auth/login.html">Login</a></li>
+                    <li><a href="/html/auth/signup.html">Signup</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="form-section">
+                <form id="signup-form" action="">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <label for="ph-no">Phone Number</label>
+                    <input type="text" id="ph-no" name="ph-no">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password">
+                    <button type="submit" class="signup-btn">Sign Up</button>
+                </form>
+                <div>
+                    <p>Existing User <a href="./login.html" class="click-here">Click Here to Login</a></p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="../../js/auth.js"></script>
+</body>
+
+</html>
