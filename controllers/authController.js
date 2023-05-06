@@ -55,6 +55,7 @@ exports.postLogin = async (req, res, next) => {
 		return res.status(200).json({
 			message: 'login successful',
 			token,
+			id: user.id,
 			name: user.name,
 			email: user.email,
 		});

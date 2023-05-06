@@ -70,10 +70,11 @@ async function userLogin(e) {
 			}
 			if (response.status == 200) {
 				localStorage.setItem('token', response.data.token);
-				localStorage.setItem('user', {
-					name: response.data.name,
-					email: response.data.email,
-				});
+				localStorage.setItem('user', [
+					response.data.id,
+					response.data.name,
+					response.data.email,
+				]);
 				document.location.replace('/html/main.html');
 			}
 		} catch (error) {

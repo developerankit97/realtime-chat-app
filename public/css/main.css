@@ -72,7 +72,9 @@ img {
       padding: 0.6rem;
       display: flex;
       align-items: center;
-      width: 100%; }
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.219);
+      border-radius: 0.6rem; }
       #user-list-sidebar #groups-and-users .user-list .user-item .user-image {
         width: 35px;
         height: 35px;
@@ -107,14 +109,32 @@ img {
     border-bottom: none; }
   #main-chat section {
     position: absolute;
-    bottom: 50px;
+    bottom: 67px;
     top: 56px;
     overflow: auto;
-    width: 100%; }
-  #main-chat footer {
+    width: 100%;
+    background-color: aquamarine; }
+  #main-chat .message-footer {
     position: absolute;
     bottom: 0;
-    width: 100%; }
+    width: 100%;
+    padding: 1rem; }
+    #main-chat .message-footer form {
+      width: 100%;
+      display: flex; }
+    #main-chat .message-footer input {
+      border: none;
+      padding: 0.6rem 0.4rem;
+      font-size: 0.8rem;
+      flex-grow: 9;
+      border-radius: 0.4rem; }
+    #main-chat .message-footer input:focus {
+      outline: none; }
+    #main-chat .message-footer button {
+      flex-grow: 1;
+      border: none;
+      border-left: 2px solid black;
+      border-radius: 0.4rem; }
 
 header {
   border-bottom: 1px solid darkcyan; }
