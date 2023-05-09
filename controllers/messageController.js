@@ -1,5 +1,6 @@
 const User = require('../models/userModel');
 const Message = require('../models/messageModel');
+const { Op } = require('sequelize');
 
 exports.postMessage = async (req, res, next) => {
 	const message = req.body.message;
@@ -24,7 +25,12 @@ exports.getMessages = async (req, res, next) => {
 	const receiverId = Number(req.params.receiverId);
 	try {
 		const response = await Message.findAll({
-			where: { senderId: req.user.id, receiverId: receiverId },
+			where: {
+				[Op.or]: [
+					{ senderId: req.user.id, receiverId: receiverId },
+					{ receiverId: req.user.id, senderId: receiverId },
+				],
+			},
 		});
 		res.status(200).json({
 			message: 'Success',

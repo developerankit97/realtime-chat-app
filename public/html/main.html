@@ -47,10 +47,24 @@
             <header class="main-chat-header">
                 <h1 class="chat-recipient"></h1>
             </header>
-            <section id="chat-container" data-room="" data-logged-user="">
-                <h1>hsdlflsdjf</h1>
-                <h1>hsdlflsdjf</h1>
-                <h1>hsdlflsdjf</h1>
+            <section id="chat-container" data-receiver='' data-room="" data-logged-user="">
+                <ul class="chat-container-msg-list">
+                    <li class="chat-container-msg me">
+                        <div class="chat-container-msg-box">
+                            <p class="chat-container-msg-sender">user</p>
+                            <p class="chat-container-msg-sendtime">time</p>
+
+                        </div>
+                        <p class="chat-container-msg-content">Message</p>
+                    </li>
+                    <li class="chat-container-msg you">
+                        <div class="chat-container-msg-box">
+                            <p class="chat-container-msg-sender">user</p>
+                            <p class="chat-container-msg-sendtime">time</p>
+                        </div>
+                        <p class="chat-container-msg-content">Message</p>
+                    </li>
+                </ul>
             </section>
             <footer class="message-footer">
                 <form method="POST">
@@ -60,6 +74,7 @@
             </footer>
         </main>
     </div>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="../js/main.js"></script>
 </body>

@@ -6,6 +6,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 require('dotenv').config();
 const sequelize = require('./utils/db');
+const socketio = require('socket.io');
 
 const User = require('./models/userModel');
 const Message = require('./models/messageModel');
@@ -33,4 +34,25 @@ sequelize
 	.then()
 	.catch((err) => console.log(err));
 
-app.listen(process.env.PORT);
+const server = app.listen(process.env.PORT);
+
+const io = socketio(server);
+
+io.on('connection', (socket) => {
+	console.log('A user connected', socket.id);
+
+	socket.on('joinroom', (room) => {
+		console.log(room);
+		socket.join(room);
+	});
+
+	socket.on('chatMessage', (data) => {
+		console.log(data.room);
+		io.to(data.room).emit('chatMessage', data);
+	});
+
+	socket.on('typing', (data) => {
+		console.log(data);
+		io.to(data.room).emit('typing', data);
+	});
+});
